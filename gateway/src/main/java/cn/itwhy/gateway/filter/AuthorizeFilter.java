@@ -22,6 +22,10 @@ import reactor.core.publisher.Mono;
  *    实现GlobalFilter接口
  *    添加@Order注解或实现Ordered接口
  *    编写处理逻辑
+ *  执行顺序：
+ *  order值越小，优先级越高
+ * 当过滤器的order值一样时，会按照
+ * defaultFilter > 路由过滤器 > GlobalFilter的顺序执行
  */
 
 //@Order(-1)//设置顺序，也可实现Ordered接口
