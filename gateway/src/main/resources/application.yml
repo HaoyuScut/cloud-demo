@@ -13,10 +13,14 @@ spring:
           uri: lb://userservice # 路由的目标地址 lb就是负载均衡，后面跟服务名称
           predicates:
             - Path=/user/** # 路径断言，判断路径是否是以/user开头，如果是则符合
+          filters: #GatewayFilter是网关中提供的一种过滤器，可以对进入网关的请求和微服务返回的响应做处理：
+#            - AddRequestHeader=Truth,Itwhy is aowsome!
         - id: order-service
           uri: lb://orderservice # 路由的目标地址
           predicates:
-            - Path=/order/**
-#            - Before=2031-01-20T17:42:47.789-07:00[Asia/Shanghai]
-#   断言工厂作用：读取用户配置的断言规则，然后解析成对应的判断条件
-#   Path=/order/**:对用户请求路径做判断
+            - Path=/order/** #            - Before=2031-01-20T17:42:47.789-07:00[Asia/Shanghai]
+      #   断言工厂作用：读取用户配置的断言规则，然后解析成对应的判断条件
+      #   Path=/order/**:对用户请求路径做判断
+      default-filters: #默认过滤器，对所有的路由都生效
+        - AddRequestHeader=Truth,Itwhy is 666!
+
