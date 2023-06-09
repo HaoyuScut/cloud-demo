@@ -1,5 +1,6 @@
 package cn.itwhy.order.pojo;
 
+import cn.itwhy.feign.pojo.User;
 import lombok.Data;
 
 @Data

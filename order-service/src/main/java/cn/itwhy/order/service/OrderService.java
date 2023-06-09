@@ -1,12 +1,12 @@
 package cn.itwhy.order.service;
 
-import cn.itwhy.order.clients.UserClient;
+import cn.itwhy.feign.clients.UserClient;
+import cn.itwhy.feign.pojo.User;
+
 import cn.itwhy.order.mapper.OrderMapper;
 import cn.itwhy.order.pojo.Order;
-import cn.itwhy.order.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 @Service
 public class OrderService {
