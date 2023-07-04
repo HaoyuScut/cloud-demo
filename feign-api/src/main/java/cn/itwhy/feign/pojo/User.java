@@ -1,5 +1,6 @@
 package cn.itwhy.feign.pojo;
 
+
 import lombok.Data;
 
 @Data

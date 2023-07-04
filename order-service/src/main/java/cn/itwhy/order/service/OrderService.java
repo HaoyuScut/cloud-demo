@@ -5,6 +5,7 @@ import cn.itwhy.feign.pojo.User;
 
 import cn.itwhy.order.mapper.OrderMapper;
 import cn.itwhy.order.pojo.Order;
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,6 +28,11 @@ public class OrderService {
         order.setUser(user);
         // 4.返回
         return order;
+    }
+
+    @SentinelResource("goods")
+    public void queryGoods() {
+        System.err.println("查询商品");
     }
 
 
